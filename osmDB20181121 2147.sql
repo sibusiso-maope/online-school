@@ -15,11 +15,11 @@
 
 
 --
--- Create schema springschool
+-- Create schema onlineschool
 --
 
-CREATE DATABASE IF NOT EXISTS springschool;
-USE springschool;
+CREATE DATABASE IF NOT EXISTS onlineschool;
+USE onlineschool;
 
 --
 -- Definition of table `admin`
@@ -247,25 +247,25 @@ CREATE TABLE `student_attendance` (
 
 /*!40000 ALTER TABLE `student_attendance` DISABLE KEYS */;
 INSERT INTO `student_attendance` (`sa_id`,`sa_date`,`s_id`,`status`) VALUES 
- (16,'2018-11-19',1,'P'),
- (17,'2018-11-19',2,'P'),
- (18,'2018-11-19',4,'P'),
- (19,'2018-11-19',5,'P'),
- (20,'2018-11-19',3,'P'),
- (21,'2018-11-20',5,'P'),
- (22,'2018-11-19',1,'P'),
- (23,'2018-11-19',2,'A'),
- (24,'2018-11-19',4,'A'),
- (25,'2018-11-05',1,'P'),
- (26,'2018-11-05',2,'A'),
- (27,'2018-11-05',1,'P'),
- (28,'2018-11-06',1,'A'),
- (29,'2018-11-06',2,'P'),
- (30,'2018-11-06',4,'P'),
- (31,'2018-11-19',3,'P'),
- (32,'2018-11-20',3,'P'),
- (33,'2018-11-18',3,'A'),
- (34,'2018-11-21',1,'P');
+ (16,'2020-06-08',1,'P'),
+ (17,'2020-06-08',2,'P'),
+ (18,'2020-06-08',4,'P'),
+ (19,'2020-06-08',5,'P'),
+ (20,'2020-06-08',3,'P'),
+ (21,'2020-06-09',5,'P'),
+ (22,'2020-06-09',1,'P'),
+ (23,'2020-06-09',2,'A'),
+ (24,'2020-06-09',4,'A'),
+ (25,'2020-06-10',1,'P'),
+ (26,'2020-06-10',2,'A'),
+ (27,'2020-06-10',1,'P'),
+ (28,'2020-06-10',1,'A'),
+ (29,'2020-06-10',2,'P'),
+ (30,'2020-06-11',4,'P'),
+ (31,'2020-06-11',3,'P'),
+ (32,'2020-06-11',3,'P'),
+ (33,'2020-06-11',3,'A'),
+ (34,'2020-06-11',1,'P');
 /*!40000 ALTER TABLE `student_attendance` ENABLE KEYS */;
 
 
@@ -284,7 +284,7 @@ CREATE TABLE `student_info` (
   `dob` date NOT NULL,
   `age` int(10) unsigned NOT NULL,
   `f_name` varchar(500) NOT NULL,
-  `m_name` varchar(500) NOT NULL,
+  `l_name` varchar(500) NOT NULL,
   `telephone_no` int(10) unsigned default NULL,
   `mobile_no` int(10) unsigned NOT NULL,
   `present_address` varchar(500) NOT NULL,
@@ -299,12 +299,11 @@ CREATE TABLE `student_info` (
 --
 
 /*!40000 ALTER TABLE `student_info` DISABLE KEYS */;
-INSERT INTO `student_info` (`s_id`,`s_name`,`c_id`,`sess_id`,`roll_no`,`gender`,`dob`,`age`,`f_name`,`m_name`,`telephone_no`,`mobile_no`,`present_address`,`permanent_address`) VALUES 
- (1,'Mohammad Bin Afsar',1,1,6001,'Male','2007-11-14',11,'Nurul Afsar','Aleya Begum',1671315561,1671315561,'Mirpur, Dhaka','Narayanganj'),
- (2,'Salman Samir',1,1,6002,'Male','2006-11-14',12,'Saiful Islam','Fahmida Akhter',1671315561,1671541268,'Ajimpur, Dhaka','Pahartali'),
- (3,'Lubaba Tabassum',3,1,8001,'Female','2004-11-14',14,'Md. Alauddin','Khaleda Akhtar',1811375624,1811375624,'Badda, Dhaka','Narayanganj'),
- (4,'Abir Sharier',1,1,6003,'Male','2005-11-14',11,'Sakhawat Hosen','Mahmuda Akhtar',1671658294,1671658294,'Jatrabari, Dhaka',''),
- (5,'Najiba Akhtar',2,1,7001,'Female','2006-11-14',12,'Md. Alauddin','Khaleda Akhtar',181452268,181452268,'Jatrabari, Dhaka','Gazipur');
+INSERT INTO `student_info` (`s_id`,`s_name`,`c_id`,`sess_id`,`roll_no`,`gender`,`dob`,`age`,`f_name`,`l_name`,`telephone_no`,`mobile_no`,`present_address`,`permanent_address`) VALUES 
+ (1,'sabelomaope',1,1,6001,'Male','1998-09-23',22,'Sabelo','Maope',1671315561,0634209999,'Ext 11, Evaton','Ext 11, Evaton'),
+ (2,'siphiwemaope',1,1,6002,'Male','2000-10-29',20,'Siphiwe','Maope',1671315561,0635551111,'Ext 11, Evaton','Ext 11, Evaton'),
+ (3,'thabisolehasa',3,1,8001,'Female','2004-08-20',16,'Thabiso','Lehasa',1811375624,0617207866,'Country View Estate, Midrand','Country View Estate, Midrand'),
+ (4,'atlehanglehasa',1,1,6003,'Male','2002-06-13',18,'Atlehang','Lehasa',1811375624,0623601818,'Country View Estate, Midrand','Country View Estate, Midrand');
 /*!40000 ALTER TABLE `student_info` ENABLE KEYS */;
 
 
@@ -325,9 +324,9 @@ CREATE TABLE `subject` (
 
 /*!40000 ALTER TABLE `subject` DISABLE KEYS */;
 INSERT INTO `subject` (`sub_id`,`sub_name`) VALUES 
- (1,'English'),
- (2,'Bangla'),
- (3,'Mathematics');
+ (1,'Forex'),
+ (2,'Money Management'),
+ (3,'Business Management');
 /*!40000 ALTER TABLE `subject` ENABLE KEYS */;
 
 
@@ -356,8 +355,9 @@ CREATE TABLE `teacher_info` (
 
 /*!40000 ALTER TABLE `teacher_info` DISABLE KEYS */;
 INSERT INTO `teacher_info` (`t_id`,`t_name`,`t_email`,`gender`,`phone_number`,`address`,`sub_id`,`join_date`) VALUES 
- (1,'Rafiq Uddin','rafiquddin100@gmail.com','Male',1671315565,'Mirpur',1,'2018-10-10'),
- (6,'aaa','aaa@gmail.com','Female',1671315561,'Pahartali',2,'2018-11-15');
+ (3,'Sibusiso Maope','Sibusiso.Maope@gmail.com','Male',0832091789,'63511 Zone 16',1,'2020-01-05'),
+ (6,'Phindile Maope','phindimaope@gmail.com','Female',06193331818,'42 Suidrand',2,'2020-01-05'),
+ (9,'Mohumi Bofelo','mohumibofelo@gmail.com','Female',0675251080,'47 Vanderbijlpark',3,'2020-01-05');
 /*!40000 ALTER TABLE `teacher_info` ENABLE KEYS */;
 
 
@@ -384,11 +384,11 @@ CREATE TABLE `users` (
 
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` (`u_id`,`u_name`,`password`,`r_id`,`email`,`phone`) VALUES 
- (1,'galib','123',1,'',''),
- (2,'samir','123',2,'',''),
- (3,'abir','123',3,'',''),
- (4,'jakir','123',3,'jakir@gmail.com','01625486529'),
- (5,'Jamil','123',2,'jamil@gmail.com','01672459968');
+ (1,'sibusiso','123',1,'',''),
+ (2,'phindi','123',2,'',''),
+ (3,'ofentse','123',3,'',''),
+ (4,'khotso','123',3,'khotso@gmail.com','01625486529'),
+ (5,'tumi','123',2,'jamil@gmail.com','01672459968');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
 

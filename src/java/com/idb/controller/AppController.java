@@ -513,7 +513,7 @@ public class AppController {
     public String addTeacher(ModelAndView model, Teachers teachers, HttpServletRequest request) {
 
         if (!teachers.getT_img().getOriginalFilename().equals("")) {
-            FileUploadUtility.uploadFileTeaher(request, teachers.getT_img(), teachers.getT_name(), teachers.getP_number());
+            FileUploadUtility.uploadFileTeacher(request, teachers.getT_img(), teachers.getT_name(), teachers.getP_number());
         }
         appService.addTeacher(teachers);
         model.getModelMap().put("teachers", teachers);
